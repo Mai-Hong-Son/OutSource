@@ -5,10 +5,10 @@ import {apiGetListTinh} from './apiHelpers';
 export function* getListTinhSaga() {
   try {
     const response = yield call(apiGetListTinh);
-    const listPayload = response.data?.payload;
+    const listPayload = response.data;
+    console.log('listPayload', listPayload);
 
     if (listPayload) {
-      console.log('listPayload', listPayload);
       yield put(updateListTinh(listPayload));
     }
   } catch (error) {

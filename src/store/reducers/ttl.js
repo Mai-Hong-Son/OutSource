@@ -9,7 +9,7 @@ export default function listTinh(state = defaultState, action) {
     case UPDATE_LIST_TINH:
       return {
         ...state,
-        data: action.posts,
+        data: action.payload,
       };
     default:
       return state;
